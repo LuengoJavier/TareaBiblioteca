@@ -1,7 +1,6 @@
 package com.biblioteca.tareabiblioteca.controller;
 
 import com.biblioteca.tareabiblioteca.model.Categoria;
-import com.biblioteca.tareabiblioteca.model.Libro;
 import com.biblioteca.tareabiblioteca.model.data.DBConnector;
 import com.biblioteca.tareabiblioteca.model.data.DBGenerator;
 import com.biblioteca.tareabiblioteca.model.data.dao.CategoriaDAO;

@@ -28,6 +28,12 @@ public class LibroDAO {
         Result resultados = query.select().from(DSL.table("Libro")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaLibros(query, resultados);
     }
+    public static List buscarLibrosCategoria(DSLContext query,Object dato){
+        Categoria categoria = CategoriaDAO.buscarCategoria(query,"id_categoria",dato);
+        Result resultados = query.select().from(DSL.table("Libro")).where(DSL.field("categoria").eq(categoria.getNombre())).fetch();
+        System.out.println(resultados.size());
+        return obtenerListaLibros(query, resultados);
+    }
     private static List obtenerListaLibros(DSLContext query,Result resultados){
         List<Libro> libros= new ArrayList<>();
         for(int fila=0; fila<resultados.size();fila++){
@@ -37,7 +43,6 @@ public class LibroDAO {
             String categoria = (String) resultados.getValue(fila,"categoria");
             int año = (Integer) resultados.getValue(fila,"año");
             String tipoLibro = (String) resultados.getValue(fila,"tipo_libro");
-            System.out.println(categoria);
             Categoria categoria1 = CategoriaDAO.buscarCategoria(query,"nombre",categoria);
             libros.add(new Libro(id,titulo,editorial,categoria1,año,tipoLibro));
         }

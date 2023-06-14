@@ -15,6 +15,10 @@
     <form action="registroLibro" method="get">
         <input type="submit" value="Registrar Libro" class="boton">
     </form>
+    <br>
+    <form action="buscarLibro" method="get">
+        <input type="submit" value="Buscar libro" class="boton">
+    </form>
 </div>
 </body>
 </html>
