@@ -13,10 +13,9 @@
     <title>Mostrar usuarios</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
 <h1>Lista de libros encontrados</h1>
-<div class="tabla">
-    <table>
+<br>
+    <table class="table">
         <tr>
             <th>Titulo</th>
             <th>Editorial</th>
@@ -34,9 +33,9 @@
             </tr>
         </c:forEach>
     </table>
+<div class="form-group">
     <form>
         <a href="index.jsp" class="button-link">Volver al menú</a>
     </form>
 </div>
-</body>
 </html>

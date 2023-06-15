@@ -36,7 +36,6 @@ public class CategoriaDAO {
     public static List<Categoria> obtenerCategorias(DSLContext query){
         Result result=query.select().from(DSL.table("Categoria")).fetch();
         List<Categoria>categorias=new ArrayList<>();
-        System.out.println("categorias");
         for (int i = 0; i < result.size(); i++) {
             categorias.add(new Categoria(
                     (Integer) result.getValue(i,"id_categoria"),
@@ -47,7 +46,6 @@ public class CategoriaDAO {
     public static Categoria buscarCategoria(DSLContext query, String columna, Object dato){
         Result result  = query.select().from(DSL.table("Categoria")).where(DSL.field(columna).eq(dato)).fetch();
         Categoria categoria = new Categoria((Integer) result.getValue(0,"id_categoria"),(String) result.getValue(0,"nombre"));
-        System.out.println(categoria);
         return categoria;
     }
 }

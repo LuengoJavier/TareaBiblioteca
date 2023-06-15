@@ -3,6 +3,7 @@ body {
     background-color: #c5c5c5;
     margin: 0;
     padding: 20px;
+    text-align: center;
 }
 
 h1{
@@ -77,4 +78,15 @@ input[type="submit"] {
 input[type="submit"]:hover {
     text-align: center;
     background-color: #45a049;
+}
+.table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }

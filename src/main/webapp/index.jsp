@@ -11,13 +11,20 @@
     <form action="registroCategoria" method="get">
         <input type="submit" value="Registrar Categoria" class="boton">
     </form>
-    <br>
+</div>
+<div class="form-group">
     <form action="registroLibro" method="get">
         <input type="submit" value="Registrar Libro" class="boton">
     </form>
-    <br>
+</div>
+<div class="form-group">
     <form action="buscarLibro" method="get">
         <input type="submit" value="Buscar libro" class="boton">
+    </form>
+</div>
+<div class="form-group">
+    <form action="eliminarLibro" method="get">
+        <input type="submit" value="Eliminar libro" class="boton">
     </form>
 </div>
 </body>

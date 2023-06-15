@@ -48,4 +48,25 @@ public class LibroDAO {
         }
         return libros;
     }
+    public static boolean eliminarLibro(DSLContext query, int id_libro){
+        Table tablaLibro= table(name("Libro"));
+        query.delete(DSL.table("Libro")).where(DSL.field("id_libro").eq(id_libro)).execute();
+        return true;
+    }
+    public static List<Libro> obtenerLibros(DSLContext query){
+        Result resultados=query.select().from(DSL.table("Libro")).fetch();
+        List<Libro> libros=new ArrayList<>();
+        for (int fila = 0; fila < resultados.size(); fila++) {
+            int id = (Integer) resultados.getValue(fila,"id_libro");
+            String titulo = (String) resultados.getValue(fila,"titulo");
+            String editorial = (String) resultados.getValue(fila,"editorial");
+            String categoria = (String) resultados.getValue(fila,"categoria");
+            int año = (Integer) resultados.getValue(fila,"año");
+            String tipoLibro = (String) resultados.getValue(fila,"tipo_libro");
+            Categoria categoria1 = CategoriaDAO.buscarCategoria(query,"nombre",categoria);
+            libros.add(new Libro(id,titulo,editorial,categoria1,año,tipoLibro));
+        }
+        return libros;
+    }
 }
+

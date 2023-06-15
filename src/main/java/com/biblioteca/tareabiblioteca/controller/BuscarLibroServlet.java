@@ -47,6 +47,7 @@ public class BuscarLibroServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
+        req.setAttribute("categorias",obtenerCategorias());
         respuesta.forward(req,resp);
     }
     private List buscarLibrosCategoria(int id_categoria) throws ClassNotFoundException {

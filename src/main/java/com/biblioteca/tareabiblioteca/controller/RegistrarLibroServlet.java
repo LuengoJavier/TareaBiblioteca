@@ -55,6 +55,7 @@ public class RegistrarLibroServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
+        req.setAttribute("categorias",obtenerCategorias());
         respuesta.forward(req,resp);
     }
     private boolean agregarLibro(int id_libro, String titulo, String editorial, int id_categoria, int año, String tipoLibro) throws ClassNotFoundException {

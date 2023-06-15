@@ -15,7 +15,7 @@
 <h1>Registro Categoria</h1>
 <form action="registroCategoria" method="post">
     <div class="form-group">
-        <label for="id_categoria">Codigo Libro:</label>
+        <label for="id_categoria">Codigo Categoria:</label>
         <input type="text" id="id_categoria" name="id_categoria" required>
     </div>
     <div class="form-group">
